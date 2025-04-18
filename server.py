@@ -11,8 +11,8 @@ def index():
 @app.route('/emotionDetector')
 def emotionDetector():
     text = request.args.get("textToAnalyze")
-    rep = emotion_detector(text)
-    json_rep = json.loads(rep)
+    json_rep = emotion_detector(text)
+    #json_rep = json.loads(rep)
 
     output = f"For the given statement, the system response is 'anger': {str(json_rep['anger'])},"
     output += f" 'disgust': {str(json_rep['disgust'])}, 'fear': {str(json_rep['fear'])}, "
